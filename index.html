@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Software design principles for evolving architectures</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style type="text/css"> 
+			small {text-align: left;}
+ 			img { border:none;}
+ 			.pcenter {text-align:  center;}
+ 			.reveal section img {
+ 				border:none; 
+ 				box-shadow: none; 
+ 				background: #222222; 
+ 			};
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides"> 
+				<section>
+					<h2>Software design principles for evolving architectures</h2> 
+					<p class="pcenter"><small>firat atagun</small> </p>
+					
+				</section>
+				<section>
+					<h5>How to navigate</h5>
+
+					<ul>
+						<li>Use arrow keys to browse the slides</li>
+						<li>CTRL+SHIFT+F to search</li>
+						<li>Press ESC to view all slides</li>
+					</ul>
+				</section>
+
+				<section>
+					<h5>Table of Contents</h5>
+					<ol style="font-size: 24px; width: 300px;">
+						<li><a href="#/3">General Principles</a></li>
+						<li><a href="#/4">SOLID Principles</a></li>
+						<li><a href="#/5">Architecture</a></li>
+						<li><a href="#/6">Architectural Patterns</a></li>
+					</ul>
+				</section>
+
+				<section>
+					
+					<section>
+						<h5>General Principles</h5>
+					</section>
+
+					<section>
+						<h5>Dry</h5>
+						<p>Every knowledge in a system must have a single authoritative, unambiguous representation. – Pragmatic Programmers.</p>
+					</section>
+
+					<section>
+						<h5>YAGNI</h5>
+						<p>Embrace principle of last responsible moment. <br/>
+						   Postpone decisions until you can’t postpone them any further.<br/> 
+						</p>
+					</section>
+
+					<section>
+						<h5>KISS</h5>
+						<p>
+							Simple keeps focus.<br/>
+							Good software design hides inherent complexity and avoids accidental complexity.
+						</p>
+					</section>
+
+					<section>
+						<h5>Principle of Cohesion</h5>
+						<p>
+							Removing and reducing coupling creates better design. <br/>
+							What you need is high cohesion and loose coupling. 
+						</p>
+					</section>
+
+					<section>
+						<h5>Avoid Long Methods</h5>
+						<p>
+							Long methods are :
+						</p>
+
+						<ul>
+							<li>Hard to test</li>
+							<li>Hard to reason</li>
+							<li>Hard to debug</li>
+							<li>Hard to change</li>
+							<li>Increases coupling and reduces cohesion</li>
+						</ul>
+					</section>
+
+					<section>
+						<h5>SLAP</h5>
+						<p>
+							Single level of abstraction principle with compose method pattern creates better design and increases usability.
+						</p>
+					</section>
+
+					<section>
+						<h5>Law of demeter</h5>
+						<p>Principle of least knowledge aka Law of demeter tells that consumer of a method or a class shouldn't know the inner implementation details.</p>
+					</section>
+
+				</section>				
+
+				<section>
+					<section>
+						<h3>SOLID principles</h3>
+					</section>
+
+					<section>
+						<h4>SRP : Single Responsibility Principle</h4>
+						<p>A class or a method should have only one reason to change.</p>
+					</section>
+						
+					<section>
+						<h5>OCP : Open Closed Principle</h5>
+						<p>A class should be open for extension and closed for modification. </p>
+					</section>
+
+					<section>
+						<h5>LSP : Liskov Substitution Principle</h5>
+						<p>Classes that implements the same interface or class can be substituted.</p>
+					</section>
+
+					<section>
+						<h5>ISP : Interface Segregation Principle</h5>
+						<p>Interfaces should be specialized but not too special. </p>
+					</section>
+
+					<section>
+						<h5>DI : Dependency inversion Principle</h5>
+						<p>Depend on abstractions not on implementations.</p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h5>Architecture</h5>
+					</section>
+
+					<section>
+						<h5>Definition of Architecture</h5>
+						<p>Architecture is set of decision decisions and shared understanding of a system.</p>
+					</section>
+
+					<section>
+						<h5>Big up front design</h5>
+						<p>Architectural decisions should be balanced. Big up front design is generally a bad practice. </p>
+					</section>
+
+					<section>
+						<img src="images/understanding.png" style="height: 400px;" />
+						<p>Prioratize Features based on Value and architectural impacts.</p>
+					</section>
+
+					<section>
+						<h5>Design stamina hypothesis</h5>
+						<img src="images/designstamina.png" style="height: 400px;" />
+					</section>
+
+					<section>
+						<h5>Reversibility</h5>
+						<p>An architectural decisions should be reversible.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h5>Architectural Patterns</h5>
+					</section>
+
+					<section>
+						<h5>Layered Architecture</h5>
+						<img src="images/layered.png" />
+					</section> 
+
+					<section>
+						<h5>Feature Based Slicing</h5>
+						<img src="images/features.png" />
+					</section>
+
+					<section>
+						<h5>Kernel/Plugin Architecture</h5>
+						<img src="images/kernel.png" />
+					</section>
+
+					<section>
+						<h5>Event Driven Architecture</h5>
+						<p>Mediator</p>
+						<img src="images/mediator.png" />
+						<p>Event Managers</p>
+					</section>
+
+					<section>
+						<h5>MicroServices</h5>
+						<img src="images/microservices.png" />
+					</section>
+
+					<section>
+						<h5>Architecture Comparison</h5>
+						<img src="images/comparison.png" />
+					</section>
+
+
+				</section>
+ 
+				<section data-background="#2E86C1">
+					<h3>The end.</h3>		
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+ 
+		</script>
+	</body>
+</html>
