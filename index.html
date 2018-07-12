@@ -54,8 +54,9 @@
 					<ol style="font-size: 24px; width: 300px;">
 						<li><a href="#/3">General Principles</a></li>
 						<li><a href="#/4">SOLID Principles</a></li>
-						<li><a href="#/5">Architecture</a></li>
-						<li><a href="#/6">Architectural Patterns</a></li>
+						<li><a href="#/5">Code Smells</a></li>
+						<li><a href="#/6">Architecture</a></li>
+						<li><a href="#/8">Architectural Patterns</a></li>
 					</ul>
 				</section>
 
@@ -149,7 +150,66 @@
 
 					<section>
 						<h5>DI : Dependency inversion Principle</h5>
-						<p>Depend on abstractions not on implementations.</p>
+						<p>Depend on abstractions not on implementations. <br/>
+							<a href="https://stackoverflow.com/questions/1638919/how-to-explain-dependency-injection-to-a-5-year-old" target="_new">How to explain dependency injection to 5 yearsold</a>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Code Smells</h3>
+					</section>
+					<section>
+						<h5>Rigidity</h5>
+						<p>If there is tension for the software to change, then your software is suffering from rigidity.</p>
+						<p>Rigidity arises from coupling objects and components in such a way that making a change becomes tedious.</p>
+						<p>Rigidity causes fragility</p>
+					</section>
+
+					<section>
+						<h5>Fragility</h5>
+						<p>If your breaks easily, causes failures, that is a sign of fragility.</p>
+						<p>It is very easy to detect a fragile code such as a small change in your software breaks many other dependencies.</p>
+					</section>
+
+					<section>
+						<h5>Immobility</h5>
+						<p>If your code is hard to reuse, that is immobility. </p>
+						<p>Use interfaces more. Balance generic classes. Create re-usable components.</p>
+					</section> 
+
+					<section>
+						<h5>Viscocity</h5>
+						<p>If your software is easy to hack but hard to fix properly, that is a bad sign.</p>
+						<p>Maintaining principles and practices is challenging, therefore sometimes developers hack their way through.</p>
+					</section> 
+
+					<section>
+						<h5>Complexity</h5>
+						<p>
+							Software engineers love complicated stuff, they enjoy it.
+						</p>
+						<p>
+							However, Everything that is too complicated is destined to fail. If something feels complicated it is most probably wrong.
+						</p> 
+					</section>
+
+					<section>
+						<h5>Duplication</h5>
+						<p>
+							Code duplication is a typical symptom of a bad design. 
+						</p>
+						<p>
+							Duplication of code causes a bug to show up in multiple places, thus requires duplication of effort as well.  
+						</p>
+					</section>
+
+					<section>
+						<h5>Opacity</h5>
+						<p>If your software is hard to understand, that is a bad sign.</p>
+
+						<p>Your software should be clear, concise, easy and should read like a poem.</p>
 					</section>
 				</section>
 
@@ -185,6 +245,11 @@
 				</section>
 
 				<section>
+					<p>This is not yet another monolith to microservices presentation.</p>
+					<img src="images/monolith.png" />
+				</section>
+
+				<section>
 					<section>
 						<h3>Architectural Patterns</h3>
 					</section>
@@ -209,6 +274,12 @@
 						<p>Mediator</p>
 						<img src="images/mediator.png" />
 						<p>Event Managers</p>
+					</section>
+
+					<section>
+						<h5>CQRS</h5>
+						<p>Command Query Responsibility Segregation</p>
+						<img src="images/cqrs.png" style="height: 350px;" />
 					</section>
 
 					<section>
