@@ -52,13 +52,18 @@
 				<section>
 					<h3>Table of Contents</h3>
 					<ol style="font-size: 24px; width: 300px;">
-						<li><a href="#/3">General Principles</a></li>
-						<li><a href="#/4">SOLID Principles</a></li>
-						<li><a href="#/5">Testable code</a></li>
-						<li><a href="#/5">Code Smells</a></li>
-						<li><a href="#/6">Architecture</a></li>
-						<li><a href="#/8">Architectural Patterns</a></li>
+						<li><a href="#/4">General Principles</a></li>
+						<li><a href="#/5">SOLID Principles</a></li>
+						<li><a href="#/6">Testable code</a></li>
+						<li><a href="#/7">Code Smells</a></li>
+						<li><a href="#/8">Architecture</a></li>
+						<li><a href="#/9">Architectural Patterns</a></li>
 					</ul>
+				</section>
+
+				<section>
+					<p>This is not yet another monolith to microservices presentation.</p>
+					<img src="images/monolith.png" />
 				</section>
 
 				<section>
@@ -119,7 +124,14 @@
 
 					<section>
 						<h5>Law of demeter</h5>
-						<p>Principle of least knowledge aka Law of demeter tells that consumer of a method or a class shouldn't know the inner implementation details.</p>
+						<p>Principle of least knowledge aka Law of demeter tells that consumer of a method or a class shouldn't know or use the inner implementation details.</p>
+					</section>
+
+					<section>
+						<h5>Principle of Least Surprise/Ashonisment</h5>
+						<p>Code should work correctly or incorrectly. Code should work as expected in deterministic ways.</p>
+						<p>Do not surprise consumers of your API. </p>
+						<p>If a necessary feature has high astonishment factor, it is time to redesign it.</p>
 					</section>
 
 				</section>				
@@ -225,6 +237,25 @@
 							<li>manual</li>
 						</ul>
 					</section>
+
+					<section>
+						<h5>Seams</h5>
+						<p>Building blocks of software in isolation.</p>
+					</section>
+
+					<section>
+						<h5>Object construction</h5>
+						<p>Constructors shouldn't contain any logic. Constructors should be as simple as possible. </p>
+						<p>There are types of objects. Injectables are like services that implements an interface. Newables usually represents entity. Injectables can accept other injectables but shouldn't accept newables. Newables can accept other newables but shouldn't accept any injectables.</p>
+					</section>
+
+					<section>
+						<h5>Law of demeter</h5>
+						<p>Talk to your friends. Don't talk to strangers.</p>
+						<pre><code class="hljs">var customer = _customerService.GetCustomer(id);
+var userName = Environment.GetSecurity().GetLogin.GetUser().UserName;</code></pre>
+						<p>Except Builder pattern this is a bad practice because it violates the law of demeter and makes testing harder.</p>
+					</section>
 				</section>
 
 				<section>
@@ -313,11 +344,6 @@
 						<h5>Reversibility</h5>
 						<p>An architectural decisions should be reversible.</p>
 					</section>
-				</section>
-
-				<section>
-					<p>This is not yet another monolith to microservices presentation.</p>
-					<img src="images/monolith.png" />
 				</section>
 
 				<section>
