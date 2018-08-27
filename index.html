@@ -169,100 +169,6 @@
 					</section>
 				</section>
 
-				<section data-background="#34495E">
-					<section>
-						<h3>Testable code</h3>
-					</section>
-
-					<section> 
-						<p>Code that can be tested in isolation, verifiable, deterministic and proved to be working properly at all times.</p>
-						<p>Testable code increases cohesion and loose coupling while making software maintenance easier.</p>
-					</section>
-
-					<section>
-						<h5>Why should we invest in developing testable code and tests?</h5>
-					</section>
-
-					<section>
-						<p>Testable code and associated tests reduces bugs in development and maintenance</p>
-					</section>
-
-					<section>
-						<p>Testing helps reduce effort and time of developing and maintaining our software.</p>
-						<p>Fact: mainintaining software takes much more time and effort than developing it.</p>
-						<p>Even though there is time and effort cost associated to creating tests, they pay of in the long time and increase trust to the software.</p>
-					</section>
-
-					<section> 
-						<p>Testing our code helps improve the design of our software.</p>
-					</section>
-
-					<section>
-						<p>Testing can help educate developers. It can be considered as documentation.</p>
-						<p>If a developer wants to learn about a software, reading tests can help as much as reading documentation.</p>
-
-					</section>
-
-					<section>
-						<p>Tests increases the trust and confidence in our software. </p> 
-					</section>
-
-					<section>
-						<h5>Types of tests</h5>
-					</section>
-
-					<section>
-						<h5>What</h5>
-						<ul>
-							<li>unit</li>
-							<li>integration</li>
-							<li>component</li>
-							<li>service</li>
-						</ul>
-					</section>
-
-					<section>
-						<h5>Why</h5>
-						<ul>
-							<li>functional</li>
-							<li>acceptance</li>
-							<li>smoke</li>
-						</ul>
-					</section>
-
-					<section>
-						<h5>How</h5>
-						<ul>
-							<li>automated</li>
-							<li>manual</li>
-						</ul>
-					</section>
-
-					<section>
-						<h5>Seams</h5>
-						<p>Building blocks of software in isolation. Can be thought of context or bounded context</p>
-					</section>
-
-					<section>
-						<h5>Object construction</h5>
-						<p>Constructors shouldn't contain any logic. Constructors should be as simple as possible. </p>
-						<p>There are injectables and newables. Injectables are like services that implements an interface. Newables usually represents entity. Injectables can accept other injectables but shouldn't accept newables. Newables can accept other newables but shouldn't accept any injectables.</p>
-					</section>
-
-					<section>
-						<h5>Use polymorphism over conditionals</h5>
-						<p>if you see a repeating pattern of same conditionals you can extract it into polymorphic constructs. Break complex classes to smaller simpler classes.</p>
-					</section>
-
-					<section>
-						<h5>Law of demeter</h5>
-						<p>Talk to your friends. Don't talk to strangers.</p>
-						<pre><code class="hljs">var customer = _customerService.GetCustomer(id);
-var userName = Environment.GetSecurity().GetLogin.GetUser().UserName;</code></pre>
-						<p>Except Builder pattern this is a bad practice because it violates the law of demeter and makes testing harder.</p>
-					</section>
-				</section>
-
 				<section data-background="#E74C3C">
 					<section>
 						<h3>Code Smells</h3>
@@ -366,6 +272,10 @@ var userName = Environment.GetSecurity().GetLogin.GetUser().UserName;</code></pr
 					</section>
 
 					<section>
+						<p>Layers are connected to each other through interfaces/contracts which provides decoupling. Implementation can change without breaking any other layer.</p>
+					</section>
+
+					<section>
 						<h5>Layered Architecture</h5>
 						<img src="images/standardmvc.png" alt="layered architecture" />
 					</section> 
@@ -409,6 +319,38 @@ var userName = Environment.GetSecurity().GetLogin.GetUser().UserName;</code></pr
 					</section>
 
 					<section>
+						<h5>Microservices principles</h5>
+						<img src="images/microservicesprinciples.png" alt="microservices principles">
+
+						<p>reference: <a href="https://samnewman.io/talks/principles-of-microservices/">Sam Newman</a></p>
+					</section>
+
+					<section>
+						<h5>Containers</h5>
+						<img src="images/containers.jpg" alt="containers" style="height: 300px;" />
+
+					</section>
+
+					<section>
+						<h5>Containers</h5>
+						<p>Build, ship and run distributed apps.</p>
+						<p>Docker, Kubernetes, CoreOS, Apache Mesos etc.</p>
+						<p>#docker run -d -p 8080:80 --name myapp app</p>
+					</section>
+
+					<section>
+						<p>#docker run -d -p 8080:80 --name myapp app</p>
+						<p>docker exec -it 6640 /bin/bash</p>
+					</section>
+
+					<section>
+						<h5>Automation</h5>
+						<p>a.k.a Infrastructure as code.</p>
+						<p>Everything fails all the time - Werner Vogels.</p>
+						<p>Provisioning, Configuration management, Deployment, Continious delivery, Security and orchestration.</p>
+					</section>
+
+					<section>
 						<h5>Which one to pick?</h5> 
 					</section>
 
@@ -420,8 +362,6 @@ var userName = Environment.GetSecurity().GetLogin.GetUser().UserName;</code></pr
 						<h5>Architecture Comparison</h5>
 						<img src="images/comparison.png" alt="architecture comparison" />
 					</section>
-
-
 				</section>
  
 				<section data-background="#2E86C1">
